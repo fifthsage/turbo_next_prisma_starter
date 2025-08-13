@@ -1,5 +1,5 @@
 {
-  "name": "turbo_next_prisma_starter",
+  "name": "project-name",
   "private": true,
   "scripts": {
     "build": "turbo build",
