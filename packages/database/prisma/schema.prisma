@@ -1,0 +1,66 @@
+generator client {
+    provider = "prisma-client-js"
+    output   = "../.generated/client"
+}
+
+datasource db {
+    provider  = "postgresql"
+    url       = env("DATABASE_URL") // uses connection pooling
+    directUrl = env("DIRECT_URL") // uses a direct connection
+    // schemas   = ["public", "ev_cpo_platform"]
+}
+
+model User {
+    id              String    @id @default(cuid())
+    profileId       String?   @unique @map(name: "profile_id")
+    email           String?   @unique
+    password        String?
+    name            String?
+    contact         String?
+    profileImageUrl String?   @map(name: "profile_image_url")
+    sex             String?
+    birth           DateTime?
+    accessToken     String?   @map(name: "access_token")
+    refreshToken    String?   @map(name: "refresh_token")
+    createdAt       DateTime  @default(now()) @map(name: "created_at")
+    updatedAt       DateTime  @default(now()) @updatedAt @map(name: "updated_at")
+    deletedAt       DateTime? @map(name: "deleted_at")
+
+    userSocialAccounts UserSocialAccount[] @relation(map: "user_social_accounts")
+
+    @@index([deletedAt], map: "user_deleted_at_idx")
+    @@map(name: "user")
+}
+
+model UserSocialAccount {
+    id         String   @id @default(cuid())
+    userId     String   @map("user_id")
+    socialType String   @default("KAKAO") @map(name: "social_type")
+    socialId   String   @map(name: "social_id")
+    createdAt  DateTime @default(now()) @map(name: "created_at")
+    updatedAt  DateTime @default(now()) @updatedAt @map(name: "updated_at")
+
+    user User @relation(fields: [userId], references: [id])
+
+    @@map(name: "user_social_account")
+}
+
+model AdminUser {
+    id              String    @id @default(cuid())
+    email           String?   @unique
+    password        String?
+    name            String?
+    contact         String?
+    role            String    @default("USER")
+    profileImageUrl String?   @map(name: "profile_image_url")
+    sex             String?
+    birth           DateTime?
+    accessToken     String?   @map(name: "access_token")
+    refreshToken    String?   @map(name: "refresh_token")
+    createdAt       DateTime  @default(now()) @map(name: "created_at")
+    updatedAt       DateTime  @default(now()) @updatedAt @map(name: "updated_at")
+    deletedAt       DateTime? @map(name: "deleted_at")
+
+    @@index([deletedAt], map: "admin_user_deleted_at_idx")
+    @@map(name: "admin_user")
+}

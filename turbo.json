@@ -1,0 +1,79 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "NODE_ENV",
+    "ENV",
+    "MAINTENANCE",
+    "DATABASE_URL",
+    "DIRECT_URL",
+    "REDIS_URL",
+    "SUPABASE_ANON_KEY",
+    "SUPABASE_URL",
+    "SUPABASE_SERVICE_ROLE_KEY",
+    "SUPABASE_JWT_SECRET",
+    "POSTGRES_URL",
+    "POSTGRES_PRISMA_URL",
+    "POSTGRES_URL_NON_POOLING",
+    "POSTGRES_USER",
+    "POSTGRES_HOST",
+    "POSTGRES_PASSWORD",
+    "POSTGRES_DATABASE",
+    "SYSTEM_AUTHENTICATION_KEY",
+    "CRON_SECRET",
+    "JWT_SECRET",
+    "NEXTAUTH_SECRET",
+    "NEXTAUTH_URL",
+    "IRON_SESSION_COOKIE_NAME",
+    "IRON_SESSION_PASSWORD"
+  ],
+  "ui": "tui",
+  "tasks": {
+    "db:migrate:dev": {
+      "interactive": true,
+      "persistent": true,
+      "cache": false
+    },
+    "db:migrate:deploy": {
+      "cache": false
+    },
+    "db:generate": {
+      "cache": false
+    },
+    "db:seed": {
+      "cache": false
+    },
+    "build": {
+      "dependsOn": [
+        "^db:generate",
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "!.next/cache/**"
+      ]
+    },
+    "lint": {
+      "dependsOn": [
+        "^lint"
+      ]
+    },
+    "typecheck": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "test": {
+      "dependsOn": [
+        "^test"
+      ]
+    },
+    "dev": {
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

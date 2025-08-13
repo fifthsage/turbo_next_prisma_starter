@@ -1,0 +1,44 @@
+{
+    "name": "@repo/database",
+    "version": "0.0.0",
+    "type": "module",
+    "files": [
+        "./json"
+    ],
+    "exports": {
+        ".": {
+            "import": "./index.ts",
+            "require": "./index.js"
+        },
+        "./redis": {
+            "import": "./redis/index.ts",
+            "require": "./redis/index.js"
+        },
+        "./utils": {
+            "import": "./src/utils/index.ts",
+            "require": "./src/utils/index.js"
+        }
+    },
+    "scripts": {
+        "db:migrate:dev": "prisma migrate dev",
+        "db:migrate:deploy": "prisma migrate deploy",
+        "db:generate": "prisma generate",
+        "db:push": "prisma db push --skip-generate",
+        "db:seed": "node scripts/seed.js",
+        "lint": "eslint --fix",
+        "typecheck": "tsc --noEmit",
+        "test": "jest --passWithNoTests"
+    },
+    "dependencies": {
+        "@repo/eslint-config": "workspace:*",
+        "@repo/typescript-config": "workspace:*",
+        "@prisma/client": "6.13.0",
+        "prisma": "6.13.0",
+        "ts-node": "10.9.2",
+        "redis": "^5.7.0"
+    },
+    "peerDependencies": {
+        "zod": "^3.25.67",
+        "typescript": "5.8.2"
+    }
+}
