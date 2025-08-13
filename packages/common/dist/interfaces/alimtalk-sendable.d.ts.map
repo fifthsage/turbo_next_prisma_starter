@@ -1,0 +1,1 @@
+{"version":3,"file":"alimtalk-sendable.d.ts","sourceRoot":"","sources":["../../src/interfaces/alimtalk-sendable.ts"],"names":[],"mappings":"AAAA,UAAU,gBAAgB,CAAC,CAAC;IAC1B,UAAU,EAAE,MAAM,CAAC;IACnB,EAAE,EAAE,MAAM,CAAC;IACX,MAAM,EAAE,CAAC,CAAC;IAEV,IAAI,OAAO,IAAI,MAAM,CAAC,MAAM,EAAE,OAAO,CAAC,CAAC;CACxC;AAED,eAAe,gBAAgB,CAAC"}

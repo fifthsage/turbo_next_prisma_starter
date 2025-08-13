@@ -1,0 +1,1 @@
+{"version":3,"file":"use-api.d.ts","sourceRoot":"","sources":["../../../src/next/hooks/use-api.ts"],"names":[],"mappings":"AAIA,OAAO,EAAe,oBAAoB,EAAE,MAAM,gBAAgB,CAAC;AAKnE,UAAU,WAAW;IACnB,cAAc,CAAC,EAAE,OAAO,CAAC;CAC1B;AAED,MAAM,CAAC,OAAO,UAAU,MAAM,CAAC,KAAK,CAAC,EAAE,WAAW,IAIvC,CAAC,SAAS,WAAW,GAAG,GAAG,SAAS,oBAAoB,GAAG,IAAI,gBA+BzE"}

@@ -1,0 +1,37 @@
+"use server";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+import { SINGIN_URL } from "../../lib/constants";
+import { ApiError, UnauthenticatedError } from "../../lib/error";
+import { _fetch, getDataFromResponse } from "../../lib/fetch";
+export async function apiFetch(input, init) {
+    try {
+        const response = await _fetch(input, {
+            headers: {
+                Cookie: (await headers()).get("cookie") || "",
+            },
+            ...init,
+        });
+        const body = (await response.json());
+        if (response.status !== 200) {
+            const errorMessage = body.message || "http 응답 오류";
+            switch (response.status) {
+                case 401: {
+                    throw new UnauthenticatedError(errorMessage);
+                }
+                default: {
+                    throw new ApiError(response.status, errorMessage);
+                }
+            }
+        }
+        return getDataFromResponse(body);
+    }
+    catch (error) {
+        if (error instanceof UnauthenticatedError) {
+            redirect(SINGIN_URL);
+        }
+        else {
+            throw error;
+        }
+    }
+}

@@ -1,0 +1,86 @@
+// Utils
+export const STRING_SEPARATOR = ";";
+export const DATE_SEPARATOR = "~";
+export const KEY_SEPARATOR = ":";
+// UI
+export const BACKDROP_ZINDEX = 10;
+/**
+ * dayjs
+ * https://day.js.org/docs/en/display/format
+ */
+export const DATE_FORMAT = "YYYY-MM-DD";
+export const DATE_FORMAT_DISPLAY = "YYYY년 M월 D일";
+export const TIME_FORMAT_DISPLAY = "HH시 mm분";
+export const DATE_TIME_FORMAT = "YYYY-MM-DD HH:mm:ss";
+export const DATE_TIME_FORMAT_DISPLAY = "YYYY년 M월 D일 HH시 mm분";
+export const DATE_TIME_FORMAT_FOR_KEY = "YYYYMMDDHH";
+export const RESERVATION_DATE_TIME_FORMAT = "YYYY년 M월 D일";
+export const IMINENT_HOURS = 24;
+// SECONDS
+export const SECONDS = {
+    ONE_MINUTE: 60,
+    ONE_HOUR: 60 * 60,
+    ONE_DAY: 60 * 60 * 24,
+    ONE_WEEK: 60 * 60 * 24 * 7,
+    ONE_MONTH: 60 * 60 * 24 * 30,
+    ONE_YEAR: 60 * 60 * 24 * 365,
+    ONE_HOUR_IN_MILISECONDS: 60 * 60 * 1000,
+    ONE_DAY_IN_MILISECONDS: 60 * 60 * 24 * 1000,
+    ONE_WEEK_IN_MILISECONDS: 60 * 60 * 24 * 7 * 1000,
+    ONE_MONTH_IN_MILISECONDS: 60 * 60 * 24 * 30 * 1000,
+    ONE_YEAR_IN_MILISECONDS: 60 * 60 * 24 * 365 * 1000,
+    ONE_MINUTE_IN_MILISECONDS: 60 * 1000,
+    ONE_SECOND_IN_MILISECONDS: 1000,
+};
+// Social Provider
+export const SOCIAL_PROVIDER = {
+    KAKAO: "KAKAO",
+    GOOGLE: "GOOGLE",
+    NAVER: "NAVER",
+    APPLE: "APPLE",
+};
+// PG
+export const TOSS_PAYMENTS = "TOSS_PAYMENTS";
+export const CURRENT_PAYMENTS = TOSS_PAYMENTS;
+// Kakaotalk
+export const KAKAOTALK_CHANNEL_ID = "";
+export const KAKAOTALK_CHANNEL_PF_ID = "";
+// Test User Phone
+export const TEST_USER_PHONE_NUMBERS = ["01044020501", "+821044020501"];
+// Path
+export const SINGIN_URL = "/auth/signin";
+// User
+export const ANONYMOUS = "ANONYMOUS";
+// Service
+export const CHARGER_STATUS = {
+    UNKNOWN: "0",
+    COMMUNICATION_ERROR: "1",
+    AVAILABLE: "2",
+    CHARGING: "3",
+    STOPPED: "4",
+    UNDER_MAINTENANCE: "5",
+};
+export default {
+    STRING_SEPARATOR,
+    DATE_SEPARATOR,
+    KEY_SEPARATOR,
+    BACKDROP_ZINDEX,
+    DATE_FORMAT,
+    DATE_FORMAT_DISPLAY,
+    TIME_FORMAT_DISPLAY,
+    DATE_TIME_FORMAT,
+    DATE_TIME_FORMAT_DISPLAY,
+    DATE_TIME_FORMAT_FOR_KEY,
+    RESERVATION_DATE_TIME_FORMAT,
+    IMINENT_HOURS,
+    SECONDS,
+    SOCIAL_PROVIDER,
+    TOSS_PAYMENTS,
+    CURRENT_PAYMENTS,
+    KAKAOTALK_CHANNEL_ID,
+    KAKAOTALK_CHANNEL_PF_ID,
+    TEST_USER_PHONE_NUMBERS,
+    SINGIN_URL,
+    ANONYMOUS,
+    CHARGER_STATUS,
+};
