@@ -1,5 +1,4 @@
 
-
 > @repo/ui@0.0.0 typecheck /Users/fifthsage/Projects/turbo_next_prisma_starter/packages/ui
 > tsc --noEmit
 

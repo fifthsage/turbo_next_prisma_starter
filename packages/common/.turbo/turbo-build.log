@@ -1,5 +1,4 @@
 
-
 > @repo/common@0.0.0 build /Users/fifthsage/Projects/turbo_next_prisma_starter/packages/common
 > tsc -p tsconfig.build.json
 
