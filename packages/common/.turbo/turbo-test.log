@@ -1,5 +1,0 @@
-
-> @repo/common@0.0.0 test /Users/fifthsage/Projects/turbo_next_prisma_starter/packages/common
-> jest --passWithNoTests
-
-No tests found, exiting with code 0
