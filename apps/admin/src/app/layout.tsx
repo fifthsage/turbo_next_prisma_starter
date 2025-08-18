@@ -12,20 +12,18 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
-const title = "모빌리티플러스 ERP";
+const title = "Example ADMIN";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_URL || "https://ev-cpo-platform-erp.vercel.app",
-  ),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL || "https://example.com"),
   title,
-  description: ["모빌리티플러스 ERP"].join(","),
+  description: [].join(","),
   openGraph: {
     type: "website",
-    description: "모빌리티플러스 통합 관리웹",
+    description: "example admin application using Next.js, Prisma, and MUI",
     locale: "ko_KR",
     // images: `${process.env.NEXT_PUBLIC_STATIC_URL}/statics/images/assets/og-image.png`,
-    url: "https://ev-cpo-platform-erp.vercel.app",
+    url: "https://example.com",
     siteName: title,
   },
   icons: {

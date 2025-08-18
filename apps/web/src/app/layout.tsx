@@ -15,22 +15,19 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
 });
 
-const title = "모빌리티플러스";
+const title = "Example WEB";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_URL || "https://ev-cpo-platform-web.vercel.app",
-  ),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL || "https://example.com"),
   title,
-  description: ["가장 쉬운 전기차 충전기 찾기!"].join(","),
-  keywords: ["전기차 충전", "전기차 충전소"],
+  description: [].join(","),
+  keywords: [],
   openGraph: {
     type: "website",
-    description:
-      "가장 쉬운 전기차 충전기 찾기! 전기차 충전소를 빠르고 편리하게 찾아보세요.",
+    description: "example web application using Next.js, Prisma, and MUI",
     locale: "ko_KR",
     // images: `${process.env.NEXT_PUBLIC_STATIC_URL}/statics/images/assets/og-image.png`,
-    url: "https://ev-cpo-platform-web.vercel.app",
+    url: "https://example.com",
     siteName: title,
   },
   icons: {
