@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
-import { GA_TRACKING_ID } from "@repo/common";
+import { GA_TRACKING_ID } from "@repo/common/lib/browser";
 import localFont from "next/font/local";
 import "./globals.css";
 import Script from "next/script";

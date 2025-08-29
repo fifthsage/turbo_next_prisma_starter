@@ -1,5 +1,5 @@
 /* eslint-disable turbo/no-undeclared-env-vars */
-import { getBasicAuthFromSecret } from "../lib/crypto";
+import { getBasicAuthFromSecret } from "../lib/node/crypto";
 
 type PaymentCardResponse = {
   amount: number;

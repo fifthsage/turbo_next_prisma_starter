@@ -1,5 +1,4 @@
-import { escapePhoneNumber } from "@repo/common";
-import constants from "@repo/common/lib/constants";
+import { escapePhoneNumber, SOCIAL_PROVIDER } from "@repo/common";
 import prisma from "@repo/database";
 import { CredentialsSignin, type NextAuthConfig } from "next-auth";
 
@@ -57,7 +56,7 @@ export const authConfig = {
             });
 
             const socialAccountQuery = {
-              socialType: constants.SOCIAL_PROVIDER.KAKAO,
+              socialType: SOCIAL_PROVIDER.KAKAO,
               socialId: id,
             };
 

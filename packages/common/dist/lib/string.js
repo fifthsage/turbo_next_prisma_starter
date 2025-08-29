@@ -5,7 +5,7 @@ export function joinTitle(value) {
     }
     return filtered.pop() || "알 수 없음";
 }
-export function joinedStringtoArray(value = null, options = {
+export function splitStringToArray(value = null, options = {
     separator: "|",
     defaultValue: [],
 }) {
@@ -13,6 +13,15 @@ export function joinedStringtoArray(value = null, options = {
         return options.defaultValue;
     }
     return value.split(options.separator);
+}
+export function joinArrayToString(value = null, options = {
+    separator: "|",
+    defaultValue: "",
+}) {
+    if (!value || value.length === 0) {
+        return options.defaultValue;
+    }
+    return value.join(options.separator);
 }
 export function escapePhoneNumber(value) {
     return value.replace(/[^\d+]/g, "");
@@ -106,10 +115,18 @@ export function replaceSegment(value, index, newValue, delimiter = ":") {
     parts[index] = newValue;
     return parts.join(delimiter);
 }
+export function getStaticPath(bucket, path = null, qs) {
+    const basePath = `${process.env.SUPABASE_URL}/storage/v1/object/public/${bucket}/${path}`;
+    if (qs) {
+        return `${basePath}?${qs}`;
+    }
+    return basePath;
+}
 export default {
     joinTitle,
     formatNumberKR,
-    joinedStringtoArray,
+    splitStringToArray,
+    joinArrayToString,
     escapePhoneNumber,
     stripPhoneCountryCode,
     toValidKoreanPhoneNumberOrNull,
@@ -120,4 +137,5 @@ export default {
     parseNumber,
     extractCleanAddress,
     replaceSegment,
+    getStaticPath,
 };

@@ -1,8 +1,12 @@
 export declare function joinTitle(value: (string | undefined | null)[]): string;
-export declare function joinedStringtoArray(value?: string | null, options?: {
+export declare function splitStringToArray(value?: string | null, options?: {
     separator: string;
     defaultValue: string[];
 }): string[];
+export declare function joinArrayToString(value?: string[] | null, options?: {
+    separator: string;
+    defaultValue: string;
+}): string;
 export declare function escapePhoneNumber(value: string): string;
 export declare function stripPhoneCountryCode(value: string): string;
 export declare function toValidKoreanPhoneNumberOrNull(value: string): string | null;
@@ -17,10 +21,12 @@ export declare function extractCleanAddress(address: string): {
     address: string | null;
 };
 export declare function replaceSegment(value: string, index: number, newValue: string, delimiter?: string): string;
+export declare function getStaticPath(bucket: string, path?: string | null, qs?: string | null): string;
 declare const _default: {
     joinTitle: typeof joinTitle;
     formatNumberKR: typeof formatNumberKR;
-    joinedStringtoArray: typeof joinedStringtoArray;
+    splitStringToArray: typeof splitStringToArray;
+    joinArrayToString: typeof joinArrayToString;
     escapePhoneNumber: typeof escapePhoneNumber;
     stripPhoneCountryCode: typeof stripPhoneCountryCode;
     toValidKoreanPhoneNumberOrNull: typeof toValidKoreanPhoneNumberOrNull;
@@ -31,6 +37,7 @@ declare const _default: {
     parseNumber: typeof parseNumber;
     extractCleanAddress: typeof extractCleanAddress;
     replaceSegment: typeof replaceSegment;
+    getStaticPath: typeof getStaticPath;
 };
 export default _default;
 //# sourceMappingURL=string.d.ts.map
