@@ -38,7 +38,10 @@ export const authConfig = {
               contact: escapePhoneNumber(
                 profile?.kakao_account.phone_number || "",
               ),
-              sex: profile?.kakao_account.gender,
+              // sex:
+              //   profile?.kakao_account.gender === "male"
+              //     ? Sex.MALE
+              //     : Sex.FEMALE,
             };
 
             const user = await prisma.user.upsert({
