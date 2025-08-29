@@ -1,5 +1,9 @@
-import { Container } from "@repo/ui";
+import { Box, Container } from "@repo/ui";
 
 export default function HomeView() {
-  return <Container>HOME</Container>;
+  return (
+    <Container>
+      <Box py={2}>HOME</Box>
+    </Container>
+  );
 }
