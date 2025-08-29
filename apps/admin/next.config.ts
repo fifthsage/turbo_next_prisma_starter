@@ -27,16 +27,10 @@ const nextConfig: NextConfig = {
   },
   images: {
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "*.public.blob.vercel-storage.com",
-        // port: '',
-        // pathname: '*',
-      },
-      {
-        protocol: "https",
-        hostname: "[project-id].supabase.co",
-      },
+      // {
+      //   protocol: "https",
+      //   hostname: "[project-id].supabase.co",
+      // },
     ],
   },
   async rewrites() {
