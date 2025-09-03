@@ -56,10 +56,11 @@ const nextConfig: NextConfig = {
   },
   productionBrowserSourceMaps: false,
   reactStrictMode: false,
-  // experimental: {
-  //   // The instrumentation hook is required for Sentry to work on the serverside
-  //   instrumentationHook: true,
-  // },
+  experimental: {
+    turbo: {
+      root: path.join(__dirname, "../../"),
+    },
+  },
 };
 
 module.exports = nextConfig;
