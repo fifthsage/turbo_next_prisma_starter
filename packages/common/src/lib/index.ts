@@ -10,3 +10,4 @@ export * from "./array";
 export * from "./pagination";
 export * from "./geo";
 export * from "./cache";
+export * from "./url";
