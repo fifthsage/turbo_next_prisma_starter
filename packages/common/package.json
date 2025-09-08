@@ -65,33 +65,33 @@
     "package.json"
   ],
   "scripts": {
-    "lint": "eslint --fix",
-    "typecheck": "tsc --noEmit",
-    "test": "jest --passWithNoTests",
     "build": "tsc -p tsconfig.build.json",
-    "postbuild": "cp -r types dist/types"
+    "postbuild": "cp -r types dist/types",
+    "lint": "eslint --fix",
+    "test": "jest --passWithNoTests",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "querystring": "0.2.0",
-    "uuid": "^11.1.0",
-    "redis": "^5.7.0",
     "dayjs": "^1.11.13",
     "jose": "^5.9.6",
     "js-cookie": "^3.0.5",
     "nanoid": "^5.0.4",
-    "zod": "^3.24.2",
     "next": "15.1.1",
-    "ts-node": "10.9.2"
+    "querystring": "0.2.0",
+    "redis": "^5.7.0",
+    "ts-node": "10.9.2",
+    "uuid": "^11.1.0",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@types/node": "^22.13.1"
   },
   "peerDependencies": {
+    "@react-google-maps/api": "^2.20.5",
     "@types/lodash": "^4.17.15",
     "lodash": "^4.17.21",
-    "@react-google-maps/api": "^2.20.5",
     "typescript": "5.8.2"
   }
 }
